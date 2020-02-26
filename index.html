@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>NutriWeb</title>        
+        <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />                
+        <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />                
+    </head>
+
+    <body>        
+<!--
+        <header>  
+        </header>
+-->
+        <main>       
+            <div class="container">
+                <form>
+                    <div class="form-group">
+                        <label for="inputCurrentDate">Data</label>
+                        <input type="date" class="form-control" id="inputCurrentDate" aria-describedby="currentDateHelp">
+                        <small id="currentDateHelp" class="form-text text-muted">Preencha a data do registro.</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inputAlimentacao">Alimentação</label>
+                        <input type="text" class="form-control" id="inputAlimentacao">
+                    </div>
+                    
+                    <div class="treino">
+                        Treino/Exercício
+                        <div>
+                            <div class="custom-control custom-radio trieno__item">                        
+                                <input type="radio" id="treinoSim" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="treinoSim">Sim</label>
+                            </div>
+                            <div class="custom-control custom-radio trieno__item">
+                                <input type="radio" id="treinoNao" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="treinoNao">Não</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputIntestino">Intestino</label>
+                        <input type="text" class="form-control" id="inputIntestino">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputSono">Sono</label>
+                        <input type="number" class="form-control" id="inputSono">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputAgua">Água</label>
+                        <input type="number" class="form-control" id="inputAgua">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputExcecoes">Excecoes</label>
+                        <input type="number" class="form-control" id="inputExcecoes">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>     
+        </main>
+<!--
+        <footer>            
+        </footer>
+-->
+    </body>
+
+</html>
