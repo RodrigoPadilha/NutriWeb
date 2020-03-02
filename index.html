@@ -12,72 +12,72 @@
     <body>        
         <main>       
             <div class="container">
-                <form>
+                <form onsubmit="registroController.adiciona(event)">
                     <div class="form-group">
                         <label for="inputCurrentDate">Data</label>
-                        <input type="date" class="form-control" id="inputCurrentDate" aria-describedby="currentDateHelp">
+                        <input id="inputCurrentDate" type="date" class="form-control" aria-describedby="currentDateHelp">
                         <small id="currentDateHelp" class="form-text text-muted">Preencha a data do registro.</small>
                     </div>
                     <div>
                         Alimentação
                         <div>                            
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1">Café da manhã</label>
+                                <input id="checkBreakfast" type="checkbox" class="custom-control-input">
+                                <label class="custom-control-label" for="checkBreakfast">Café da manhã</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1">Lanche da manhã</label>
+                                <input id="checkMorningSnack" type="checkbox" class="custom-control-input">
+                                <label class="custom-control-label" for="checkMorningSnack">Lanche da manhã</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1">Almoço</label>
+                                <input id="checkLunch" type="checkbox" class="custom-control-input">
+                                <label class="custom-control-label" for="checkLunch">Almoço</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1">Lanche da tarde</label>
+                                <input id="checkAfternoonSnack" type="checkbox" class="custom-control-input">
+                                <label class="custom-control-label" for="checkAfternoonSnack">Lanche da tarde</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1">Jantar</label>
+                                <input id="checkDinner" type="checkbox" class="custom-control-input">
+                                <label class="custom-control-label" for="checkDinner">Jantar</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1">Lanhce da noite</label>
+                                <input id="checkEvenningSnack" type="checkbox" class="custom-control-input">
+                                <label class="custom-control-label" for="checkEvenningSnack">Lanhce da noite</label>
                             </div>
                         </div>
                     </div>
                     <div class="treino">
                         Treino/Exercício
-                        <div>
+                        <div id="inputTrain">
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline1">Sim</label>
+                                <input id="trainYes" type="radio" name="trainOption" class="custom-control-input" checked>
+                                <label class="custom-control-label" for="trainYes">Sim</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline2">Não</label>
+                                <input id="trainNo" type="radio" name="trainOption" class="custom-control-input">
+                                <label class="custom-control-label" for="trainNo">Não</label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputIntestino">Intestino</label>
-                        <input type="text" class="form-control" id="inputIntestino">
+                        <label for="inputIntestine">Intestino</label>
+                        <input id="inputIntestine" type="text" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="inputSono">Sono</label>
-                        <input type="number" class="form-control" id="inputSono">
+                        <label for="inputSleep">Sono</label>
+                        <input id="inputSleep" type="number" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="inputAgua">Água</label>
-                        <input type="number" class="form-control" id="inputAgua">
+                        <label for="inputWater">Água</label>
+                        <input id="inputWater" type="number" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="inputExcecoes">Exceções</label>
-                        <input type="number" class="form-control" id="inputExcecoes">
+                        <label for="inputExceptions">Exceções</label>
+                        <input id="inputExceptions" type="number" class="form-control">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Adicionar</button>
                 </form>
 
                 <table class="table table-striped">
@@ -102,11 +102,12 @@
         </main>
 
         <script src="js/app/models/Registro.js"></script>
+        <script src="js/app/controllers/RegistroController.js"></script>
         <script>
-            var registro = new Registro()
-            
+            let registroController = new RegistroController()
 
         </script>
+        
     </body>
 
 </html>
