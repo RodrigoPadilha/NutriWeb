@@ -28,8 +28,21 @@ class RegistroController{
         //ToDo converter data de string para Date
 
         //Alura aula 3 - criando um objeto Date
+
+        let data = new Date(...
+            this._currentDate.value
+            .split('-')
+            .map((item, indice) => {
+                return item - indice % 2;
+            })
+        );
+
+        let registro = new Registro(data,"2","3","4","5","6")
+
+        console.log(registro.data)
         
-        console.log(this._currentDate.value)
+        /*
+        console.log(typeof(this._currentDate.value))
         console.log(this._train.parentElement.textContent)
         console.log('---------------')
         console.log(this._breakFast.checked)
@@ -43,7 +56,7 @@ class RegistroController{
         console.log(this._sleep.value)
         console.log(this._water.value)
         console.log(this._exceptions.value)
-                                                        
+        */                                            
     }
 
 

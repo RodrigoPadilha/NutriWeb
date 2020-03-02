@@ -1,12 +1,17 @@
 class Registro{
 
-    constructor(alimentacao, exercicio, intestino, sono, agua, excecoes){
+    constructor(data, alimentacao, exercicio, intestino, sono, agua, excecoes){
+        this._data = new Date(data.getTime())
         this._alimentacao = alimentacao
         this._exercicio = exercicio
         this._intestino = intestino
         this._sono = sono
         this._agua = agua
         this._excecoes = excecoes
+    }
+
+    get data(){
+        return this._data
     }
 
     get alimentacao(){
