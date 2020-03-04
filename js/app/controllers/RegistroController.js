@@ -37,7 +37,14 @@ class RegistroController{
             })                              // Sun Mar 29 2020 00:00:00 GMT-0300 (Horário Padrão de Brasília)
         );
 
-        let registro = new Registro(data,"2","3","4","5","6")
+        let registro = new Registro(
+            data,
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+        )
 
         console.log(registro.data)
         
