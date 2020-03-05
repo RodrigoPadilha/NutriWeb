@@ -12,7 +12,7 @@
     <body>        
         <main>       
             <div class="container">
-                <form onsubmit="registroController.adiciona(event)">
+                <form id="formRegister" onsubmit="registerController.adiciona(event)">
                     <div class="form-group">
                         <label for="inputCurrentDate">Data</label>
                         <input id="inputCurrentDate" type="date" class="form-control" aria-describedby="currentDateHelp">
@@ -22,27 +22,27 @@
                         Alimentação
                         <div>                            
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input id="checkBreakfast" type="checkbox" class="custom-control-input">
+                                <input id="checkBreakfast" type="checkbox" class="custom-control-input" name="food" value="breakfast">
                                 <label class="custom-control-label" for="checkBreakfast">Café da manhã</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input id="checkMorningSnack" type="checkbox" class="custom-control-input">
+                                <input id="checkMorningSnack" type="checkbox" class="custom-control-input" name="food" value="morning snack">
                                 <label class="custom-control-label" for="checkMorningSnack">Lanche da manhã</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input id="checkLunch" type="checkbox" class="custom-control-input">
+                                <input id="checkLunch" type="checkbox" class="custom-control-input" name="food" value="lunch">
                                 <label class="custom-control-label" for="checkLunch">Almoço</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input id="checkAfternoonSnack" type="checkbox" class="custom-control-input">
+                                <input id="checkAfternoonSnack" type="checkbox" class="custom-control-input" name="food" value="afternoon snack">
                                 <label class="custom-control-label" for="checkAfternoonSnack">Lanche da tarde</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input id="checkDinner" type="checkbox" class="custom-control-input">
+                                <input id="checkDinner" type="checkbox" class="custom-control-input" name="food" value="dinner">
                                 <label class="custom-control-label" for="checkDinner">Jantar</label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input id="checkEvenningSnack" type="checkbox" class="custom-control-input">
+                                <input id="checkEvenningSnack" type="checkbox" class="custom-control-input" name="food" value="evenning snack">
                                 <label class="custom-control-label" for="checkEvenningSnack">Lanhce da noite</label>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputExceptions">Exceções</label>
-                        <input id="inputExceptions" type="number" class="form-control">
+                        <input id="inputExceptions" type="text" class="form-control">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Adicionar</button>
@@ -101,10 +101,12 @@
             </div>     
         </main>
 
-        <script src="js/app/models/Registro.js"></script>
-        <script src="js/app/controllers/RegistroController.js"></script>
+        <script src="js/app/models/Register.js"></script>
+        <script src="js/app/models/ListRegisters.js"></script>
+        <script src="js/app/controllers/RegisterController.js"></script>
+        <script src="js/app/helpers/DateHelper.js"></script>
         <script>
-            let registroController = new RegistroController()
+            let registerController = new RegisterController()
 
         </script>
         
