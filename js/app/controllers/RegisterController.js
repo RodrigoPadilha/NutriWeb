@@ -16,6 +16,9 @@ class RegisterController{
        this._exceptions = $("#inputExceptions")
 
        this._listRegisters = new ListRegisters()
+
+       this._registerView = new RegisterView($("#tableRegisters"))
+       this._registerView.update(this._listRegisters)
     }
 
     /**  
@@ -30,6 +33,8 @@ class RegisterController{
 
         this._listRegisters.insertRegister(register)
         console.log(this._listRegisters)
+
+        this._registerView.update(this._listRegisters)
 
         this._clearForm()
                                 
