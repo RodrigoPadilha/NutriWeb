@@ -34,16 +34,13 @@ class RegisterController{
         event.preventDefault(); // Evita que o comportamento padrão do Form seja executado                        
         
         let register = this._createRegister()
-
         this._listRegisters.insertRegister(register)
+        this._registerView.update(this._listRegisters)
 
         this._message.text = "Registro incluído com Sucesso"
         this._messageView.update(this._message)
 
-        this._registerView.update(this._listRegisters)
-
-        this._clearForm()
-                                
+        this._clearForm()                                
     }
 
     _createRegister(){
