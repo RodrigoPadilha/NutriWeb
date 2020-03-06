@@ -19,6 +19,10 @@ class RegisterController{
 
        this._registerView = new RegisterView($("#tableRegisters"))
        this._registerView.update(this._listRegisters)
+
+       this._message = new Message()
+       this._messageView = new MessageView($("#message"))
+       this._messageView.update(this._message)
     }
 
     /**  
@@ -32,20 +36,14 @@ class RegisterController{
         let register = this._createRegister()
 
         this._listRegisters.insertRegister(register)
-        console.log(this._listRegisters)
+
+        this._message.text = "Registro incluído com Sucesso"
+        this._messageView.update(this._message)
 
         this._registerView.update(this._listRegisters)
 
         this._clearForm()
                                 
-    }
-
-    _getCheckedFoodsFromScreen(foodList){
-        return Object.keys(foodList).map((index) => {                         
-            var key = foodList[index].value            
-            var value = foodList[index].checked            
-            return { key, value }
-        })
     }
 
     _createRegister(){
@@ -60,6 +58,14 @@ class RegisterController{
             this._water.value,
             this._exceptions.value
         )
+    }
+
+    _getCheckedFoodsFromScreen(foodList){
+        return Object.keys(foodList).map((index) => {                         
+            var key = foodList[index].value            
+            var value = foodList[index].checked            
+            return { key, value }
+        })
     }
 
     _clearForm(){

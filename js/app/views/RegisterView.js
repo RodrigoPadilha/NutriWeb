@@ -1,10 +1,10 @@
-class RegisterView{
+class RegisterView extends View{
 
-    constructor(elemento){
-        this._elemento = elemento
+    constructor(element){
+        super(element)
     }
 
-    _template(model){
+    template(model){
         return `
             <table class="table table-striped">
                 <thead>
@@ -39,11 +39,4 @@ class RegisterView{
         `
     }
 
-    update(model){
-        /** 
-         * Qualquer texto HTML válido inserido para o atributo innerHTML é convertido para elementos do DOM
-         * e renderizados na página
-         *  */ 
-        this._elemento.innerHTML = this._template(model);       
-    }
 }

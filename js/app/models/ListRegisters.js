@@ -6,7 +6,6 @@ class ListRegisters{
 
     insertRegister(register){
         this._registers.push(register)
-
     }
 
     get registers(){

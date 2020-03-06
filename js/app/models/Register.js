@@ -17,9 +17,6 @@ class Register{
     get food(){
         return this._food
     }
-    // set food(data){
-    //     this._food = data
-    // }
 
     get exercise() {
         return this._exercise
