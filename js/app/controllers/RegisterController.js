@@ -15,14 +15,18 @@ class RegisterController{
        this._water = $("#inputWater")
        this._exceptions = $("#inputExceptions")
 
-       this._listRegisters = new ListRegisters()
-
-       this._registerView = new RegisterView($("#tableRegisters"))
-       this._registerView.update(this._listRegisters)
-
-       this._message = new Message()
+       this._registerView = 
+       this._listRegisters = new BindHelper(           // Bind View => Model. Faz associação entre o Dado e View
+           new ListRegisters(),           
+           new RegisterView($("#tableRegisters")),    // atualiza essa view 
+           'registers','insertRegister')              // quando esses métodos forem chamados 
+       
        this._messageView = new MessageView($("#message"))
-       this._messageView.update(this._message)
+       this._message = new BindHelper(
+           new Message(),            
+           this._messageView,                           //Atualzia essa view
+           'text')                                      // quando essta property for alterada
+              
     }
 
     /**  
@@ -35,10 +39,8 @@ class RegisterController{
         
         let register = this._createRegister()
         this._listRegisters.insertRegister(register)
-        this._registerView.update(this._listRegisters)
 
         this._message.text = "Registro incluído com Sucesso"
-        this._messageView.update(this._message)
 
         this._clearForm()                                
     }
@@ -69,23 +71,14 @@ class RegisterController{
         document.querySelector("#formRegister").reset()
         this._currentDate.focus()
     }
-}
 
-    //console.log(register.data)
-    
-    /*
-    console.log(typeof(this._currentDate.value))
-    console.log(this._train.parentElement.textContent)
-    console.log('---------------')
-    console.log(this._breakFast.checked)
-    console.log(this._morningSnack.checked)
-    console.log(this._lunch.checked)
-    console.log(this._afternoonSnack.checked)
-    console.log(this._dinner.checked)
-    console.log(this._evenningSnack.checked)
-    console.log('---------------')
-    console.log(this._intestine.value)
-    console.log(this._sleep.value)
-    console.log(this._water.value)
-    console.log(this._exceptions.value)
-    */ 
+    download(){
+        //ToDo Implementar request com Fetch
+        //ToDo Implementar Parse do retorno com JSON.parse para object
+        //ToDo Varrer array de Objects convertendo cada objeto para model Registro com map (gera novo array)
+        //ToDo Para cada item desta lista chamar o método "adiciona" passando o item como parametro
+        //ToDo Isolar código para busca em Services
+        //ToDo Chamar método de requisição com lambda para pegar retorno de erro ou sucesso
+        //ToDo Retornar o erro ou a lista de registros através de um callback (erro, null) ou (null, sucesso)
+    }
+}
