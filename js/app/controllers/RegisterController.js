@@ -15,11 +15,11 @@ class RegisterController{
        this._water = $("#inputWater")
        this._exceptions = $("#inputExceptions")
 
-       this._registerView = 
-       this._listRegisters = new BindHelper(           // Bind View => Model. Faz associação entre o Dado e View
+       this._registerView = new RegisterView($("#tableRegisters"))
+       this._listRegisters = new BindHelper(            // Bind View => Model. Faz associação entre o Dado e View
            new ListRegisters(),           
-           new RegisterView($("#tableRegisters")),    // atualiza essa view 
-           'registers','insertRegister')              // quando esses métodos forem chamados 
+           this._registerView,                          // atualiza essa view 
+           'registers','insertRegister')                // quando esses métodos forem chamados 
        
        this._messageView = new MessageView($("#message"))
        this._message = new BindHelper(
