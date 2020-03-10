@@ -14,7 +14,7 @@ class View {
          * do DOM e renderizados na página
          *  */ 
         this._element.innerHTML = this.template(model)
-        console.log("Update View")       
+        console.log("Chamou!! Update View")       
     }
 
 }

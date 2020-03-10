@@ -15,7 +15,11 @@ class RegisterController{
        this._water = $("#inputWater")
        this._exceptions = $("#inputExceptions")
 
-       this._listRegisters = new ListRegisters()
+       this._listRegisters = new ListRegisters(model => {
+           this._registerView.update(model)
+       })
+
+
 
        this._registerView = new RegisterView($("#tableRegisters"))
        this._registerView.update(this._listRegisters)
@@ -38,7 +42,7 @@ class RegisterController{
         this._registerView.update(this._listRegisters)
 
         this._message.text = "Registro incluído com Sucesso"
-        this._messageView.update(this._message)
+//        this._messageView.update(this._message)
 
         this._clearForm()                                
     }
@@ -68,6 +72,11 @@ class RegisterController{
     _clearForm(){
         document.querySelector("#formRegister").reset()
         this._currentDate.focus()
+    }
+
+    deleteListRegister(){                
+        this._listRegisters.removeAllRegisters()             
+//        this._registerView.update(this._listRegisters)
     }
 }
 
