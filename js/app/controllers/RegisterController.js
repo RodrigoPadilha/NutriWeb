@@ -42,7 +42,6 @@ class RegisterController{
         this._registerView.update(this._listRegisters)
 
         this._message.text = "Registro incluído com Sucesso"
-//        this._messageView.update(this._message)
 
         this._clearForm()                                
     }
@@ -76,25 +75,5 @@ class RegisterController{
 
     deleteListRegister(){                
         this._listRegisters.removeAllRegisters()             
-//        this._registerView.update(this._listRegisters)
     }
 }
-
-    //console.log(register.data)
-    
-    /*
-    console.log(typeof(this._currentDate.value))
-    console.log(this._train.parentElement.textContent)
-    console.log('---------------')
-    console.log(this._breakFast.checked)
-    console.log(this._morningSnack.checked)
-    console.log(this._lunch.checked)
-    console.log(this._afternoonSnack.checked)
-    console.log(this._dinner.checked)
-    console.log(this._evenningSnack.checked)
-    console.log('---------------')
-    console.log(this._intestine.value)
-    console.log(this._sleep.value)
-    console.log(this._water.value)
-    console.log(this._exceptions.value)
-    */ 
