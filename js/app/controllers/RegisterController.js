@@ -19,7 +19,7 @@ class RegisterController{
        this._listRegisters = new BindHelper(            // Bind View => Model. Faz associação entre o Dado e View
            new ListRegisters(),           
            this._registerView,                          // atualiza essa view 
-           'registers','insertRegister')                // quando esses métodos forem chamados 
+           'registers','insertRegister', 'removeAllRegisters')                // quando esses métodos forem chamados 
        
        this._messageView = new MessageView($("#message"))
        this._message = new BindHelper(
@@ -70,6 +70,10 @@ class RegisterController{
     _clearForm(){
         document.querySelector("#formRegister").reset()
         this._currentDate.focus()
+    }
+
+    deleteListRegister(){                
+        this._listRegisters.removeAllRegisters()             
     }
 
     download(){
